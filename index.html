@@ -1403,7 +1403,7 @@
     </div>
   </section>
 
-  <!-- DOWNLOAD SECTION -->
+ <!-- DOWNLOAD SECTION -->
   <section id="download" class="download-section">
     <div class="download-container">
       <h2 class="section-title"><i class="fas fa-download"></i> DOWNLOAD GAME</h2>
@@ -1419,10 +1419,10 @@
         <div class="download-card">
           <i class="fab fa-android"></i>
           <h3>MOBILE APK</h3>
-          <button class="btn-download" id="apkDownloadBtn" onclick="window.open('https://dl.mythgames.net/rosl/full', '_blank')">
-            <i class="fas fa-download"></i> DOWNLOAD APK
+          <button class="btn-download" id="apkDownloadBtn" style="background: #444; color: #888; cursor: not-allowed; box-shadow: none; opacity: 0.6;">
+            <i class="fas fa-times-circle"></i> NOT AVAILABLE
           </button>
-          <p>Android 8.0+ | 2.8 GB</p>
+          <p>Android version coming soon</p>
           <p class="ios-text"><i class="fab fa-apple"></i> iOS NOT available NOW</p>
         </div>
       </div>
@@ -1677,11 +1677,12 @@
     });
   }
   
-  // APK Download button (already has onclick in HTML, but keep as backup)
+  // APK Download button - NOT AVAILABLE
   const apkBtn = document.getElementById('apkDownloadBtn');
   if (apkBtn) {
     apkBtn.addEventListener('click', function(e) {
-      window.open('https://dl.mythgames.net/rosl/full', '_blank');
+      e.preventDefault();
+      alert("📱 Android APK download is currently not available. Please check back later!");
     });
   }
   
