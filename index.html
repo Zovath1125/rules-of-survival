@@ -1411,13 +1411,17 @@
         <div class="download-card">
           <i class="fab fa-windows"></i>
           <h3>PC VERSION</h3>
-          <button class="btn-download" id="pcDownloadBtn">COMING SOON FOR WINDOWS</button>
+          <button class="btn-download" id="pcDownloadBtn" onclick="window.open('https://dl.mythgames.net/rosl/full', '_blank')">
+            <i class="fas fa-download"></i> DOWNLOAD FOR WINDOWS
+          </button>
           <p>Version 3.2.0 | 12.5 GB</p>
         </div>
         <div class="download-card">
           <i class="fab fa-android"></i>
           <h3>MOBILE APK</h3>
-          <button class="btn-download" id="apkDownloadBtn">COMING SOON ADROID APK</button>
+          <button class="btn-download" id="apkDownloadBtn" onclick="window.open('https://dl.mythgames.net/rosl/full', '_blank')">
+            <i class="fas fa-download"></i> DOWNLOAD APK
+          </button>
           <p>Android 8.0+ | 2.8 GB</p>
           <p class="ios-text"><i class="fab fa-apple"></i> iOS NOT available NOW</p>
         </div>
@@ -1654,20 +1658,32 @@
     });
   });
 
-  // Button functionality
+  // Button functionality with download links
   const downloadMain = document.getElementById('downloadMainBtn');
-  if (downloadMain) downloadMain.addEventListener('click', () => document.getElementById('download').scrollIntoView({ behavior: 'smooth' }));
+  if (downloadMain) downloadMain.addEventListener('click', () => {
+    window.open('https://dl.mythgames.net/rosl/full', '_blank');
+  });
   
   const trailerBtn = document.getElementById('trailerBtn');
   trailerBtn.addEventListener('click', () => {
     alert("🎬 WATCH TRAILER: 'Rules of Survival - Season 8: Neo Tokyo'\nExperience intense battle royale action.");
   });
   
+  // PC Download button (already has onclick in HTML, but keep as backup)
   const pcBtn = document.getElementById('pcDownloadBtn');
-  pcBtn.addEventListener('click', () => alert("⬇️ PC Download started: RulesOfSurvival_Setup.exe (12.5 GB)"));
+  if (pcBtn) {
+    pcBtn.addEventListener('click', function(e) {
+      window.open('https://dl.mythgames.net/rosl/full', '_blank');
+    });
+  }
   
+  // APK Download button (already has onclick in HTML, but keep as backup)
   const apkBtn = document.getElementById('apkDownloadBtn');
-  apkBtn.addEventListener('click', () => alert("📱 APK Download: RulesOfSurvival_v3.2.0.apk (2.8GB)"));
+  if (apkBtn) {
+    apkBtn.addEventListener('click', function(e) {
+      window.open('https://dl.mythgames.net/rosl/full', '_blank');
+    });
+  }
   
   const discordBtn = document.getElementById('discordBtn');
   discordBtn.addEventListener('click', () => window.open("https://discord.gg/ros-community", "_blank"));
